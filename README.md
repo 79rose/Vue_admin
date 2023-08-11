@@ -2,7 +2,7 @@
 
 ## vue3 + ts + element-plus + vite +pinia
 
-## 快速配置运行
+## 配置运行
 
 ```
 pnpm install
