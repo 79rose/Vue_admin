@@ -25,7 +25,8 @@ app.use(ElementPlus, {
 app.use(gloalComponent)
 //引入全局样式
 import '@/styles/index.scss'
-//
+//引入路由鉴权
+import './permission.ts'
 //应用挂载
 app.mount('#app')
 // console.log(import.meta.env)获取环境变量

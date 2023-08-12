@@ -48,8 +48,9 @@ import { User, Lock } from '@element-plus/icons-vue'
 import { ref, reactive } from 'vue'
 import { getTime } from '@/utils/time'
 import { ElNotification } from 'element-plus'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 const $router = useRouter()
+const $route = useRoute()
 //获取el-from组件
 const loginFroms = ref()
 //引入用户相关小产库
@@ -58,7 +59,7 @@ const useStore = useUserStore()
 //按钮加载
 const loading = ref(false)
 //收集账号密码
-const loginFrom = reactive({ username: 'admin', password: '111111' })
+const loginFrom = reactive({ username: 'admin', password: 'atguigu123' })
 //自定义校验规则
 const validatorUserName = (rule: any, value: any, callback: any) => {
   if (value.length >= 5 && value.length <= 10) {
@@ -107,7 +108,8 @@ const login = async () => {
   try {
     await useStore.userLogin(loginFrom)
     //编程样导航跳转
-    $router.push('/')
+    let redirect: any = $route.query.redirect
+    $router.push({ path: redirect || '/' })
     ElNotification({
       type: 'success',
       message: '欢迎回来',
