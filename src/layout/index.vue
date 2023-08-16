@@ -104,7 +104,7 @@ export default {
     top: $base-tabbar-height;
     padding: 20px;
     overflow: auto;
-    background-color: pink;
+    background-color: white;
     transition: all 0.3s;
     &.fold {
       width: calc(100vw - $base-menu-min-width);

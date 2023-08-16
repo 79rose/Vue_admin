@@ -6,6 +6,7 @@ import 'virtual:svg-icons-register'
 import pinia from '@/store/index.ts'
 //引入element-plus插件与样式
 import ElementPlus from 'element-plus'
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-expect-error
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 import 'element-plus/dist/index.css'

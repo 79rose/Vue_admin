@@ -12,6 +12,7 @@ const userStore = useUerStore(pinia)
 //全局前置守卫
 router.beforeEach(async (to: any, from: any, next: any) => {
   nprogress.start()
+  nprogress.set(0.5)
   //获取token 判断是否登录
   const token = userStore.token
   const username = userStore.username
