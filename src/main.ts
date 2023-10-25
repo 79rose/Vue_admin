@@ -23,6 +23,7 @@ app.use(router)
 app.use(ElementPlus, {
   locale: zhCn,
 })
+
 app.use(gloalComponent)
 //引入全局样式
 import '@/styles/index.scss'

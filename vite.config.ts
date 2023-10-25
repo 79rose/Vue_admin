@@ -37,6 +37,7 @@ export default defineConfig(({ command, mode }) => {
     },
     //代理跨域
     server: {
+      host: '0.0.0.0',
       proxy: {
         [env.VITE_APP_BASE_API]: {
           //获取数据服务器地址

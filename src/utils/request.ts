@@ -9,6 +9,7 @@ const request = axios.create({
   baseURL: import.meta.env.VITE_APP_BASE_API, //基础路径上会携带/api
   timeout: 5000,
 })
+request.defaults.headers.common['Content-Type'] = 'application/json'
 //请求拦截器
 request.interceptors.request.use((config) => {
   //config配置对象 header请求头 经常给服务器携带公共参数
@@ -30,6 +31,10 @@ request.interceptors.response.use(
   (error) => {
     //失败回调：处理http网络错误
     let message = ''
+    if (!error.response || !error.response.status) {
+      ElMessage.error('网络发生异常，无法连接服务器')
+      return Promise.reject(error)
+    }
     const Status = error.response.status
     switch (Status) {
       case 401:

@@ -27,3 +27,11 @@ export interface userInfoResponseData extends ResponseData {
     avatar: string
   }
 }
+
+// interface test {
+//   [propName: string]: any
+// }
+
+// const test1: test = {
+//   nihao: 1,
+// }

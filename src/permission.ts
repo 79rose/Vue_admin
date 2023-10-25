@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 //路由鉴权 路由能否被访问
 import router from '@/router'
 // 进度条颜色
@@ -10,7 +11,7 @@ import 'nprogress/nprogress.css'
 nprogress.configure({ showSpinner: false })
 const userStore = useUerStore(pinia)
 //全局前置守卫
-router.beforeEach(async (to: any, from: any, next: any) => {
+router.beforeEach(async (to: any, _from: any, next: any) => {
   nprogress.start()
   nprogress.set(0.5)
   //获取token 判断是否登录
@@ -44,7 +45,7 @@ router.beforeEach(async (to: any, from: any, next: any) => {
   }
 })
 //全局后置守卫
-router.afterEach((to: any, from: any) => {
+router.afterEach((to: any, _from: any) => {
   document.title = `${setting.title}-${to.meta.title}`
   nprogress.done()
 })
