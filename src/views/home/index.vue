@@ -15,7 +15,6 @@
       </div>
     </div>
   </el-card>
-
   <svg-icon name="welcome" width="500px" height="500px" class="bac"></svg-icon>
 </template>
 

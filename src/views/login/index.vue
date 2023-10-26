@@ -11,7 +11,7 @@
           ref="loginFroms"
         >
           <h1>Hello</h1>
-          <h2>欢迎来到硅谷甄选</h2>
+          <h2>欢迎来到甄选</h2>
           <el-form-item prop="username">
             <el-input
               :prefix-icon="User"

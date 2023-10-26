@@ -1,7 +1,11 @@
 <template>
   <div class="layout_container">
     <!-- 左侧菜单 -->
-    <div class="layout_slider">
+    <div
+      class="layout_slider"
+      id="menu"
+      :class="{ menufold: LayOutSettingStore.fold ? true : false }"
+    >
       <Logo></Logo>
       <!-- 展示菜单 -->
       <!-- 滚动组件 -->
@@ -63,6 +67,10 @@ export default {
 }
 </script>
 <style scoped lang="scss">
+#menu.menufold {
+  width: 55px;
+  overflow: hidden;
+}
 .layout_container {
   width: 100%;
   height: 100vh;
@@ -104,7 +112,7 @@ export default {
     top: $base-tabbar-height;
     padding: 20px;
     overflow: auto;
-    background-color: white;
+    // background-color: white;
     transition: all 0.3s;
     &.fold {
       width: calc(100vw - $base-menu-min-width);
