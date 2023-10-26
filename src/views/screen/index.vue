@@ -6,9 +6,9 @@
       </div>
       <div class="bottom">
         <div class="left">
-          <Tourist></Tourist>
-          <Age></Age>
-          <Sex></Sex>
+          <Tourist class="Tourist"></Tourist>
+          <Sex class="Sex"></Sex>
+          <Age class="Age"></Age>
         </div>
         <div class="center">中间</div>
         <div class="right">右边</div>
@@ -65,7 +65,18 @@ window.onresize = () => {
       // background-color: red;
       .left {
         flex: 1;
-        background-color: red;
+        // background-color: red;
+        display: flex;
+        flex-direction: column;
+        .Tourist {
+          flex: 1.3;
+        }
+        .Sex {
+          flex: 1;
+        }
+        .Age {
+          flex: 1.5;
+        }
       }
       .center {
         flex: 2;

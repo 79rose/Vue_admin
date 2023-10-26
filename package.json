@@ -21,6 +21,8 @@
   "dependencies": {
     "@element-plus/icons-vue": "^2.1.0",
     "axios": "^1.4.0",
+    "echarts": "^5.4.3",
+    "echarts-liquidfill": "^3.1.0",
     "element-plus": "^2.3.8",
     "moment": "^2.29.4",
     "nprogress": "^0.2.0",
