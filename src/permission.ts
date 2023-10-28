@@ -27,7 +27,7 @@ router.beforeEach(async (to: any, _from: any, next: any) => {
         //没用户信息 发请求获取用户信息
         try {
           await userStore.userInfo()
-          next()
+          next({ ...to })
         } catch (error) {
           //token过期
           //用户手动修改token

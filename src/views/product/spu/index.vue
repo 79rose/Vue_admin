@@ -37,6 +37,7 @@
                 icon="Plus"
                 title="添加SKU"
                 @click="addSku(row)"
+                :key="$index"
               ></el-button>
               <el-button
                 type="primary"
@@ -104,6 +105,7 @@
               <img
                 :src="row.skuDefaultImg"
                 style="width: 100px; height: 100px"
+                :key="$index"
               />
             </template>
           </el-table-column>

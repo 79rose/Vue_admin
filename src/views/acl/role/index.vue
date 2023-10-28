@@ -47,7 +47,7 @@
       ></el-table-column>
       <el-table-column label="操作" width="280px" align="center">
         <!-- row:已有的职位对象 -->
-        <template #="{ row, $index }">
+        <template #="{ row }">
           <el-button
             type="primary"
             size="small"
@@ -242,6 +242,7 @@ const updateRole = (row: RoleData) => {
 }
 //自定义校验规则的回调
 const validatorRoleName = (rule: any, value: any, callBack: any) => {
+  console.log(rule)
   if (value.trim().length >= 2) {
     callBack()
   } else {

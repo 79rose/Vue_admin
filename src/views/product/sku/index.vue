@@ -20,7 +20,7 @@
         prop="skuDesc"
       ></el-table-column>
       <el-table-column label="图片" width="150px">
-        <template #="{ row, $index }">
+        <template #="{ row }">
           <img
             :src="row.skuDefaultImg"
             alt=""
@@ -45,6 +45,7 @@
             size="small"
             :icon="row.isSale == 1 ? 'Bottom' : 'Top'"
             @click="updateSale(row)"
+            :key="$index"
           ></el-button>
           <el-button
             type="primary"
@@ -186,6 +187,7 @@ const getHasSku = async (pager = 1) => {
 }
 //分页器下拉菜单发生变化触发
 const handler = (pageSizes: number) => {
+  console.log(pageSizes)
   getHasSku()
 }
 

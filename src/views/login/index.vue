@@ -62,6 +62,7 @@ const loading = ref(false)
 const loginFrom = reactive({ username: 'admin', password: 'atguigu123' })
 //自定义校验规则
 const validatorUserName = (rule: any, value: any, callback: any) => {
+  console.log(rule)
   if (value.length >= 5 && value.length <= 10) {
     callback()
   } else {
@@ -69,6 +70,7 @@ const validatorUserName = (rule: any, value: any, callback: any) => {
   }
 }
 const validatorPassword = (rule: any, value: any, callback: any) => {
+  console.log(rule)
   if (value.length >= 5 && value.length <= 10) {
     callback()
   } else {
