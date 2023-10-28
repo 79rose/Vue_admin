@@ -70,7 +70,7 @@
         show-overflow-tooltip
       ></el-table-column>
       <el-table-column label="操作" width="300px" align="center">
-        <template #="{ row, $index }">
+        <template #="{ row }">
           <el-button
             type="primary"
             size="small"
@@ -331,6 +331,7 @@ const cancel = () => {
 //校验用户名字回调函数
 const validatorUsername = (rule: any, value: any, callBack: any) => {
   //用户名字|昵称,长度至少五位
+  console.log(rule)
   if (value.trim().length >= 5) {
     callBack()
   } else {
@@ -339,6 +340,7 @@ const validatorUsername = (rule: any, value: any, callBack: any) => {
 }
 //校验用户名字回调函数
 const validatorname = (rule: any, value: any, callBack: any) => {
+  console.log(rule)
   //用户名字|昵称,长度至少五位
   if (value.trim().length >= 5) {
     callBack()
@@ -347,6 +349,7 @@ const validatorname = (rule: any, value: any, callBack: any) => {
   }
 }
 const validatorPassword = (rule: any, value: any, callBack: any) => {
+  console.log(rule)
   //用户名字|昵称,长度至少五位
   if (value.trim().length >= 6) {
     callBack()

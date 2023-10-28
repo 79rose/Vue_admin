@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 //创建用户小仓库
 import { defineStore } from 'pinia'
 //引入路由（常量)
@@ -7,9 +8,9 @@ import { SET_TOKEN, GET_TOKEN, REMOVE_TOKREN } from '@/utils/token.ts'
 //引入接口
 import { reqLogin, reqUserInfo, reqLogout } from '@/api/user'
 import type { UserState } from './type/type.ts'
-import _ from 'lodash'
 import router from '@/router'
-
+//@ts-expect-error
+import cloneDeep from 'lodash/cloneDeep'
 function filterAsyncRoute(asnycRoute: any, routes: any) {
   return asnycRoute.filter((item: any) => {
     if (routes.includes(item.name)) {
@@ -59,8 +60,9 @@ const useUerStore = defineStore('User', {
         this.username = result.data.name
         this.avatar = result.data.avatar
         this.buttons = result.data.buttons
+        console.log(this.buttons)
         const userAsyncRoute = filterAsyncRoute(
-          _.cloneDeep(asyncRoute),
+          cloneDeep(asyncRoute),
           result.data.routes,
         )
         //菜单需要的数据整理完毕

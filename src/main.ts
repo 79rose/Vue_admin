@@ -15,6 +15,8 @@ import 'element-plus/dist/index.css'
 import gloalComponent from '@/components/index.ts'
 //引入路由
 import router from '@/router/index.ts'
+import { isHasButton } from '@/directive/has'
+
 //获取应用实例对象
 const app = createApp(App)
 app.use(pinia)
@@ -24,6 +26,7 @@ app.use(router)
 app.use(ElementPlus, {
   locale: zhCn,
 })
+isHasButton(app)
 
 app.use(gloalComponent)
 //引入全局样式
