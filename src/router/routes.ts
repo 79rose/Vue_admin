@@ -44,16 +44,7 @@ export const constantRoute: RouteRecordRaw[] = [
       icon: 'List',
     },
   },
-  {
-    path: '/:pathMatch(.*)',
-    redirect: '404',
-    name: 'Any',
-    meta: {
-      title: '任意路由',
-      hidden: true,
-      icon: 'List',
-    },
-  },
+
   {
     path: '/screen',
     component: () => import('@/views/screen/index.vue'),
@@ -64,6 +55,8 @@ export const constantRoute: RouteRecordRaw[] = [
       icon: 'Platform',
     },
   },
+]
+export const asyncRoute = [
   {
     path: '/acl',
     component: () => import('@/layout/index.vue'),
@@ -159,5 +152,18 @@ export const constantRoute: RouteRecordRaw[] = [
         },
       },
     ],
+  },
+]
+
+export const anyRoute = [
+  {
+    path: '/:pathMatch(.*)',
+    redirect: '404',
+    name: 'Any',
+    meta: {
+      title: '任意路由',
+      hidden: true,
+      icon: 'List',
+    },
   },
 ]
